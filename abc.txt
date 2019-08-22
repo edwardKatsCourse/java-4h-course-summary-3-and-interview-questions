@@ -1,0 +1,121 @@
+		   6
+	4  		   	8
+1		5 			9
+
+int searching = 5;
+Node node = root
+while(true) {
+	if(node.getValue() != searching) {
+		node = root.left
+	}
+}
+
+		   вам нравится наши услуги?
+	да								нет
+спасибо, досвидания!		качество		результат
+						хамство	 процесс
+
+------------------------------------------------------
+					Stream API
+начало 		source
+середина 	transformation || actions || operations || pipes
+конец		terminal operations
+
+sources
+- any collection (list.stream())
+- Arrays.stream(new int[] {1,2,3})
+- Stream.of(value1, value2), Stream.iterate, Stream.builder....
+	Supplier<TO> - takes nothing, returns value (generating from nothing)
+	
+- bufferedReader.lines()
+
+
+ACTIONS
+sorted, 
+map, (Function<FROM, TO> ) (BiFunction<FROM_A, FROM_B, RETURN>)
+filter, (Predicate<FROM> - return boolean)
+flatMap, 
+peek	(Consumer<FROM> - return void) (BiConsumer<FROM_A, FROM_B> - return void)
+
+
+TERMINAL OPERATIONS
+- forEach
+	Consumer (x) -> System.out.println(x)
+	BiConsumer (a, b) -> ...
+
+- collect (Collectors)
+	- groupingBy
+	- toMap
+	- toList
+	- toSet
+	- joining
+	- mapping
+	- counting
+	
+- reduce
+- count
+- findFirst
+- anyMatch
+- findAny
+
+------------------------------------------------------------
+Input/Output		-> byte []
+.read()					1 byte
+						-1
+
+.read(byte [] buffer)	return amount of read bytes
+						0
+						
+
+.write(int value)
+.write(byte [] bytes)
+
+Reader/Writer				  -> char []
+
+BufferedReader/BufferedWriter -> String
+
+PrintReader/PrintWriter		  -> many string
+.print()
+.println()
+.printf()
+
+------------------------------------------------------------
+Reflection
+
+data types inside annotations (constants only)
+- primitives  + arrays
+- String	  + arrays
+- Class		  + arrays
+- Enums		  + arrays
+- annotations + arrays
+
+Annotation "configuration" annotations
+1. @Target		- above which parts allowed to set
+2. @Retention	- visibility (runtime, compile time, source code)
+- Runtime	- present in byte code, available via reflection
+- Class		- present in byte code, no available via reflection
+- Source	- not present in byte code, source code only
+
+
+public class MyClass {
+	String name;
+}
+
+public static void main(String [] args) {
+
+	Field field = MyClass.class.getDeclaredField("name");
+	Object instance = MyClass.class.newInstance();
+	field.setAccessible(true); // <- permission to break into access modified fields
+	field.set("my value", instance);
+}
+
+
+
+
+
+
+
+
+
+
+
